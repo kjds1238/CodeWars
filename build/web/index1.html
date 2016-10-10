@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Code Wars</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="prism.css">
+	  <script type="text/javascript" src="jquery-2.0.3.js"></script>
+	  <script type="text/javascript" src="jquery.countdownTimer.js"></script>
+	  <link rel="stylesheet" type="text/css" href="jquery.countdownTimer.css" >
+	    <script type="text/javascript" src="js.js"></script>
+   </head>
+   <body>
+	  <div id ="header">
+         <div id="logo">
+         </div>
+         <h1>
+            Code Wars Prelims
+         </h1>
+      </div>
+      <form action="servlet_tier1" method="post">
+         <div id="form_block">
+            <div id="form1">
+               <b>Name:</b><input type="text" name="name" size="30">
+            </div>
+            <br>
+            <div id="form2">
+               <b>Phone Number:</b><input type="text" name="phone_no">
+            </div>
+         </div>
+		  <span id="ms_timer"></span>
+		    <script>
+		$(function(){
+					  $('#ms_timer').countdowntimer({
+						  minutes :20,
+						  seconds : 10,
+						  size : "lg",
+						  timeUp : timeisUp,
+
+					  });
+
+			 function timeisUp() {
+				 alert("Times up")
+				 $("#inp").trigger("click");
+        }
+
+			});
+</script>
+         <div id="box">
+            <br>
+
+			 <h3>1.Find the output:</h3>
+            <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+#include &lt;iostream.h&gt;
+#include &lt;string.h&gt;
+using namespace std;
+int main()
+{
+  cout << sizeof("HelloWorld") ;
+  cout << strlen("HelloWorld");
+return 0;
+}
+</code></pre>
+            <br>
+            <input type="radio" name="group1" value="a">10 10<br>
+            <input type="radio" name="group1" value="b">11 10<br>
+            <input type="radio" name="group1" value="c">11 11<br>
+            <input type="radio" name="group1" value="d">10 11<br>
+            <input type="radio" name="group1" value="e" checked="checked">
+            <br><br>
+            <h3>2. cout is a/an __________ </h3>
+            <br/>
+            <div class="option">
+               <input type="radio" name="group2" value="a">Operator<br>
+               <input type="radio" name="group2" value="b">Function<br>
+               <input type="radio" name="group2" value="c">Object<br>
+               <input type="radio" name="group2" value="d">Macro<br>
+               <input type="radio" name="group2" value="e" checked="checked">
+               <br><br>
+            </div>
+            <h3>3.Which one of the following is the correct way to declare a pure virtual function?</h3>
+            <br>
+            <input type="radio" name="group3" value="a">virtual void Display(void){0};<br>
+            <input type="radio" name="group3" value="b">virtual void Display = 0;<br>
+            <input type="radio" name="group3" value="c">virtual void Display(void) = 0;<br>
+            <input type="radio" name="group3" value="d">void Display(void) = 0;<br>
+            <input type="radio" name="group3" value="e" checked="checked">
+            <br><br>
+            <h3>4.Which of the following statement is correct about the program given below?</h3>
+            <pre class="language-c" style=" margin-right: 20px;
+               padding-top: 0px;">
+<code class="language-c" width= "200px">
+#include &lt;iostream.h&gt;
+int main()
+{
+    int x = 10;
+    int &y = x;
+    x++;
+    cout<< x << " " << y++;
+    return 0;
+}
+</code></pre>
+            <input type="radio" name="group4" value="a">The program will print the output 11 12.<br>
+            <input type="radio" name="group4" value="b">The program will print the output 12 11.<br>
+            <input type="radio" name="group4" value="c">The program will print the output 12 13.<br>
+            <input type="radio" name="group4" value="d">It will result in a compile time error.
+            <input type="radio" name="group4" value="e" checked="checked"><br><br>
+			 <h3>5. Which of the following statement is correct about the program given below?</h3>
+            <pre class="  language-c" style=" margin-right: 20px;
+               padding-top: 0px;">
+<code class="language-c" width= "200px">
+#include &lt;iostream.h&gt;
+int main()
+{
+    int arr[] = {1, 2 ,3, 4, 5};
+    int &zarr = arr;
+    for(int i = 0; i <= 4; i++)
+    {
+        arr[i] += arr[i];
+    }
+    for(i = 0; i <= 4; i++)
+        cout<< *(&zarr + i);
+    return 0;
+}
+</code></pre>
+            <br/>
+            <input type="radio" name="group5" value="a">The program will print the output 1 2 3 4 5.<br>
+            <input type="radio" name="group5" value="b">The program will print the output 2 4 6 8 10.<br>
+            <input type="radio" name="group5" value="c">The program will print the output 1 1 1 1 1.<br>
+            <input type="radio" name="group5" value="d">It will result in a compile time error.
+            <input type="radio" name="group5" value="e" checked="checked"><br>
+            <br>
+
+			 <h3>6. Find the output: </h3>
+
+<pre class="  language-c" style=" margin-right: 20px;
+    padding-top: 0px;">
+<code class="language-c" width= "200px">
+#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d",printf("india",printf("love",printf("i"))));}</code></pre>
+            <br/>
+            <input type="radio" name="group6" value="a">indialovei<br>
+            <input type="radio" name="group6" value="b">iloveindia<br>
+            <input type="radio" name="group6" value="c">iloveindia5<br>
+            <input type="radio" name="group6" value="d">iloveindia1<br>
+            <input type="radio" name="group6" value="e" checked="checked">
+			 <br>
+			 <h3>7.Find the type of error:</h3>
+            <pre class="  language-c" style=" margin-right: 20px;
+    padding-top: 0px;">
+<code class="language-c" width= "200px">
+main()
+{
+	main();
+}
+
+</code></pre>
+            <br/>
+            <input type="radio" name="group7" value="a">Run time error<br>
+            <input type="radio" name="group7" value="b">Compile time error<br>
+            <input type="radio" name="group7" value="c">No output<br>
+            <input type="radio" name="group7" value="d">No error
+            <input type="radio" name="group7" value="e" checked="checked"><br><br>
+
+			 <h3> 8. Find the output</h3>
+               <pre class="  language-c" style=" margin-right: 20px;
+    padding-top: 0px;">
+<code class="language-c" width= "200px">
+main()
+	{
+		char *str1="abcd";
+        char str2[]="abcd";
+		printf("%d %d %d",sizeof(str1),sizeof(str2),sizeof("abcd"));
+     }
+
+
+</code></pre>
+
+            <br/>
+            <input type="radio" name="group8" value="a">2 5 4<br>
+            <input type="radio" name="group8" value="b">2 4 4<br>
+            <input type="radio" name="group8" value="c">5 5 5<br>
+            <input type="radio" name="group8" value="d">2 5 5
+            <input type="radio" name="group8" value="e" checked="checked"><br><br>
+			 <h3>9. Find the output:</h3>
+			 <pre class="  language-c" style=" margin-right: 20px;
+    padding-top: 0px;">
+<code class="language-c" width= "200px">
+#define FALSE -1
+#define TRUE   1
+#define NULL   0
+main() {
+	if(NULL)
+		puts("NULL");
+	else if(FALSE)
+		puts("TRUE");
+	else
+		puts("FALSE");}
+
+</code></pre>
+
+            <br/>
+            <input type="radio" name="group9" value="a">NULL<br>
+            <input type="radio" name="group9" value="b">TRUE<br>
+            <input type="radio" name="group9" value="c">FALSE<br>
+            <input type="radio" name="group9" value="d">Error<br><br>
+            <input type="radio" name="group9" value="e" checked="checked">
+			 <h3> 10. Find the output </h3>
+			 <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+    {
+	int i=-1,j=-1,k=0,l=2,m;
+	m=i++&&j++&&k++||l++;
+	printf("%d %d %d %d %d",i,j,k,l,m);
+	}
+</code></pre>
+
+
+            <br/>
+            <input type="radio" name="group10" value="a">0 0 1 2 0<br>
+            <input type="radio" name="group10" value="b">0 0 1 3 0<br>
+            <input type="radio" name="group10" value="c">0 0 1 3 1<br>
+            <input type="radio" name="group10" value="d">0 0 1 2 1<br><br>
+            <input type="radio" name="group10" value="e" checked="checked">
+			 <h3> 11.Find the output:</h3>
+            <pre class=" language-c" style="margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+	char *p;
+	printf("%d %d ",sizeof(*p),sizeof(p));
+}
+</code></pre>
+            <br/>
+            <input type="radio" name="group11" value="a">2 2<br>
+            <input type="radio" name="group11" value="b">1 2 <br>
+            <input type="radio" name="group11" value="c">1 1<br>
+            <input type="radio" name="group11" value="d">size cannot be determined
+            <input type="radio" name="group11" value="e" checked="checked"><br><br>
+
+			 <h3>12. Find the output:</h3>
+            <pre class=" language-c" style="margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+    {
+	char not;
+	not=!2;
+	printf("%d",not);
+	}
+</code></pre>
+            <br/>
+            <input type="radio" name="group12" value="a">!2<br>
+            <input type="radio" name="group12" value="b">1<br>
+            <input type="radio" name="group12" value="c">0<br>
+            <input type="radio" name="group12"value="d">Error<br><br>
+            <input type="radio" name="group12" value="e" checked="checked">
+				<h3>13.Find the output:</h3>
+                <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+	int i=3;
+	switch(i)
+	{
+	 default:printf("zero");
+	 case 1: printf("one");
+	 break;
+	 case 2:printf("two");
+	 break;
+	 case 3: printf("three");
+	 break;
+	 }  }
+</code></pre>
+            <br/>
+            <input type="radio" name="group13" value="a">three<br>
+            <input type="radio" name="group13" value="b">zero three<br>
+            <input type="radio" name="group13" value="c">zero<br>
+            <input type="radio" name="group13" value="d">three zero<br><br>
+            <input type="radio" name="group13" value="e" checked="checked">
+			 <h3>14.Find the output:</h3>
+<pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+   char string[]="Hello World";
+   display(string);
+}
+void display(char *string)
+{
+	printf("%s",string);
+}
+</code></pre>
+            </b>
+            <br/>
+            <input type="radio" name="group14" value="a">Hello World<br>
+            <input type="radio" name="group14" value="b">error : type mismatch<br>
+            <input type="radio" name="group14" value="c">error :array out of bound<br>
+            <input type="radio" name="group14" value="d">none of these
+            <input type="radio" name="group14" value="e" checked="checked"><br>
+            <br>
+		  <h3>15.Find the output:</h3>
+               <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+#define int char
+main()
+{
+	int i=65;
+    printf("sizeof(i)=%d",sizeof(i));
+}
+</code></pre>
+
+            <br>
+            <input type="radio" name="group15" value="a">sizeof(i)=4 <br>
+            <input type="radio" name="group15" value="b">sizeof(i)=2<br>
+            <input type="radio" name="group15" value="c">sizeof(i)=1<br>
+            <input type="radio" name="group15" value="d">size cannot be determined
+            <input type="radio" name="group15" value="e" checked="checked"><br><br>
+            <h3>
+               16.Find the output:</h3>
+               <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+int i=15;
+i=!i>14;
+printf ("i=%d",i);}
+</code></pre>
+            </b>
+            <br/>
+            <input type="radio" name="group16" value="a">i=14<br>
+            <input type="radio" name="group16" value="b">i=10<br>
+            <input type="radio" name="group16" value="c">i=1<br>
+            <input type="radio" name="group16" value="d">i=0<br><br>
+            <input type="radio" name="group16" value="e" checked="checked">
+		  <h3>17.Find the output:</h3>
+ <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+int i=5;
+printf("%d%d%d%d%d",i++,i--,++i,--i,i);}
+</code></pre>
+
+            <br/>
+            <input type="radio" name="group17" value="a">45545<br>
+            <input type="radio" name="group17" value="b">56655<br>
+            <input type="radio" name="group17" value="c">45455<br>
+            <input type="radio" name="group17" value="d">65655
+            <input type="radio" name="group17" value="e" checked="checked"><br><br>
+		  <h3>18.Find the output:</h3>
+<pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+#include &lt;stdio.h&gt;
+#define a 10
+main()
+{
+#define a 50
+printf("%d",a);
+}
+</code></pre>
+
+            <br/>
+            <input type="radio" name="group18" value="a">error<br>
+            <input type="radio" name="group18" value="b">10 50<br>
+            <input type="radio" name="group18" value="c">10<br>
+            <input type="radio" name="group18" value="d">50<br><br>
+            <input type="radio" name="group18" value="e" checked="checked">
+              <h3>19.Find the output</h3>
+                <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+int i=10;
+main()
+{
+extern int i;
+{
+int i=20;
+{
+const volatile unsigned i=30;
+printf("%d",i);
+}
+printf("%d",i);
+}
+printf("%d",i);
+}
+</code></pre>
+
+            <br/>
+            <input type="radio" name="group19" value="a">30 20 10<br>
+            <input type="radio" name="group19" value="b">10 10 10<br>
+            <input type="radio" name="group19" value="c">30 20 20<br>
+            <input type="radio" name="group19" value="d">error
+            <input type="radio" name="group19" value="e" checked="checked"><br><br>
+            <h3>20.Which of the following is the correct order of evaluation for the below expression?
+            z = x + y * z / 4 % 2 – 1</h3>
+            <br><br>
+            <input type="radio" name="group20" value="a">* / % + - =<br>
+            <input type="radio" name="group20" value="b">= * / % + -<br>
+            <input type="radio" name="group20" value="c">/ * % - + =<br>
+            <input type="radio" name="group20" value="d">* % / - + =\
+            <input type="radio" name="group20" value="e" checked="checked"><br><br>
+           <h3> 21. If a variable is a pointer to a structure, then which of the following operator is used to access data members of the structure
+            through the pointer variable?</h3><br/	>
+            <input type="radio" name="group21" value="a">.<br>
+            <input type="radio" name="group21" value="b">&<br>
+            <input type="radio" name="group21" value="c">*<br>
+            <input type="radio" name="group21" value="d">-><br><br>
+            <input type="radio" name="group21" value="e" checked="checked">
+            <h3>22. What is remainder for 5.0 % 2?</h3><br/>
+            <input type="radio" name="group22" value="a">2.5<br>
+            <input type="radio" name="group22" value="b">2<br>
+            <input type="radio" name="group22" value="c">1<br>
+            <input type="radio" name="group22" value="d">error
+            <input type="radio" name="group22" value="e" checked="checked"><br>
+            <h3><br>
+				23.Find the output:</h3>
+<pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+#include &lt;iostream.h&gt;
+using namespace std;
+int main()
+{
+    int x = 1 , y = 1;
+    cout << ( ++x  || ++y );
+    cout << x << " " << y;
+    return 0;}
+</code></pre>
+            </b>
+            <br/>
+            <input type="radio" name="group23" value="a">0 2 1<br>
+            <input type="radio" name="group23" value="b">1 2 2<br>
+            <input type="radio" name="group23" value="c">1 2 1<br>
+            <input type="radio" name="group23" value="d">1 1 1
+            <input type="radio" name="group23" value="e" checked="checked"><br><br>
+
+		  <h3>24.Which of the following approach is adapted by C++?</h3>
+
+            <br/>
+            <input type="radio" name="group24" value="a">Top-down<br>
+            <input type="radio" name="group24" value="b">Bottom-up<br>
+            <input type="radio" name="group24" value="c">Right-left<br>
+            <input type="radio" name="group24" value="d">Left-right<br><br>
+            <input type="radio" name="group24" value="e" checked="checked">
+              <h3> 25.Find the output:</h3>
+               <pre class=" language-c" style="
+               margin-right: 20px;">
+<code class="language-c" width= "200px">
+main()
+{
+	int i=-1;
+	+i;
+	printf("i = %d, +i = %d \n",i,+i);
+}
+</code></pre>
+  </pre>
+
+            <br/>
+            <input type="radio" name="group25" value="a">i=-1,i=1<br>
+            <input type="radio" name="group25" value="b">i=-1,+i=-1<br>
+            <input type="radio" name="group25" value="c">i=-1,+i=+1<br>
+            <input type="radio" name="group25" value="d">i=1,+i=1
+            <input type="radio" name="group25" value="e" checked="checked"><br>
+            <br><br><br>
+            <center>
+               <input id="inp" type ="submit" value ="Submit"><br><br>
+            </center>
+            <script src="prism.js"></script>
+
+
+         </div>
+      </form>
+   </body>
+</html>
