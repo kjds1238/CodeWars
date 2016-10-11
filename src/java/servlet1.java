@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name="servlet_tier1", urlPatterns = {"/servlet_tier1"})
 public class servlet1 extends HttpServlet {
 
-    String message, phno, name, ans1,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15,ans16,ans17,ans18,ans19,ans20,ans21,ans22,ans23,ans24,ans25;
+    String message, phno, name,ans1,corr1;
     int total = 0;
     java.sql.Connection connect;
     java.sql.Statement stmt = null;
@@ -50,7 +50,8 @@ public class servlet1 extends HttpServlet {
         phno = request.getParameter("phone_no");
         name = request.getParameter("name");
         ans1 = request.getParameter("group1");
-        ans2 = request.getParameter("group2");
+        corr1 = request.getParameter("answ1");
+        /*ans2 = request.getParameter("group2");
         ans3 = request.getParameter("group3");
         ans4 = request.getParameter("group4");
         ans5 = request.getParameter("group5");
@@ -73,10 +74,10 @@ public class servlet1 extends HttpServlet {
         ans22 = request.getParameter("group22");
         ans23 = request.getParameter("group23");
         ans24 = request.getParameter("group24");
-        ans25 = request.getParameter("group25");
-        if(ans1.equals("b"))
-            total+=2;
-        if(ans2.equals("c"))
+        ans25 = request.getParameter("group25");*/
+        if(ans1.equals(corr1))
+            total = 100;
+        /*if(ans2.equals("c"))phno
             total+=2;
         if(ans3.equals("c"))
             total+=2;
@@ -123,7 +124,7 @@ public class servlet1 extends HttpServlet {
         if(ans24.equals("b"))
             total+=2;
         if(ans25.equals("b"))
-            total+=2;
+            total+=2;*/
         try 
         {
             stmt = connect.createStatement();
