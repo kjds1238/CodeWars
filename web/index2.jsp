@@ -24,10 +24,10 @@
         </h1>
     </div>
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://localhost:3306/trial"
+    url="jdbc:mysql://localhost:3306/jafer"
     user="root" password="lfaber"/>
     <sql:query dataSource="${snapshot}" var="result">
-        SELECT * from qs;
+        SELECT * from question;
     </sql:query>
     <form action="servlet_tier1" method="post">
         <div id="form_block">
@@ -58,37 +58,24 @@
 			});
         </script>
          <div id="box">
-    <table border="0" width="100%">
         <c:forEach var="row" items="${result.rows}">
-        <tr>
-        <td>
+        <br>
+        <c:out value="${row.q_no}"/>.
             <font size="4">
-            <pre>
-                <c:out value="${row.qqq}"/>
+            <pre><c:out value="${row.q_data}"/>
             </pre>
-            </font>
+            </font><br>
             <input type="radio" name="group${row.q_no}" value="e" checked="checked" style="display: none">
-            <input type="radio" name="answ${row.q_no}" value="${row.ans}" checked="checked" style="display: none">
-        </td>
-        <td>
+            <input type="radio" name="answ${row.q_no}" value="${row.crct_optn}" checked="checked" style="display: none">
             <input type="radio" name="group${row.q_no}" value="a">
-            <c:out value="${row.opt_a}"/>
-        </td>
-        <td>
+            <c:out value="${row.option_a}"/><br>
             <input type="radio" name="group${row.q_no}" value="b">
-            <c:out value="${row.opt_b}"/>
-        </td>
-        <td>
+            <c:out value="${row.option_b}"/><br>
             <input type="radio" name="group${row.q_no}" value="c">
-            <c:out value="${row.opt_c}"/>
-        </td>
-        <td>
+            <c:out value="${row.option_c}"/><br>
             <input type="radio" name="group${row.q_no}" value="d">
-            <c:out value="${row.opt_d}"/>
-        </td>
-    </tr>
+            <c:out value="${row.option_d}"/><br>
     </c:forEach>
-    </table>
     <center>
         <input id="inp" type ="submit" value ="Submit"><br><br>
     </center>

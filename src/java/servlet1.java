@@ -23,7 +23,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name="servlet_tier1", urlPatterns = {"/servlet_tier1"})
 public class servlet1 extends HttpServlet {
 
-    String message, phno, name,ans1,corr1;
+    String message, phno, name;
+    String[] ans = new String[26];
+    String[] corr = new String[26];
+    int i = 1;
     int total = 0;
     java.sql.Connection connect;
     java.sql.Statement stmt = null;
@@ -45,86 +48,16 @@ public class servlet1 extends HttpServlet {
         {
             System.out.println(e);
         }
-       
+       phno = request.getParameter("phone_no");
+       name = request.getParameter("name");
+       for(i = 1; i <= 25; i++)
+        {
 
-        phno = request.getParameter("phone_no");
-        name = request.getParameter("name");
-        ans1 = request.getParameter("group1");
-        corr1 = request.getParameter("answ1");
-        /*ans2 = request.getParameter("group2");
-        ans3 = request.getParameter("group3");
-        ans4 = request.getParameter("group4");
-        ans5 = request.getParameter("group5");
-        ans6 = request.getParameter("group6");
-        ans7 = request.getParameter("group7");
-        ans8 = request.getParameter("group8");
-        ans9 = request.getParameter("group9");
-        ans10 = request.getParameter("group10");
-        ans11 = request.getParameter("group11");
-        ans12 = request.getParameter("group12");
-        ans13 = request.getParameter("group13");
-        ans14 = request.getParameter("group14");
-        ans15 = request.getParameter("group15");
-        ans16 = request.getParameter("group16");
-        ans17 = request.getParameter("group17");
-        ans18 = request.getParameter("group18");
-        ans19 = request.getParameter("group19");
-        ans20 = request.getParameter("group20");
-        ans21 = request.getParameter("group21");
-        ans22 = request.getParameter("group22");
-        ans23 = request.getParameter("group23");
-        ans24 = request.getParameter("group24");
-        ans25 = request.getParameter("group25");*/
-        if(ans1.equals(corr1))
-            total = 100;
-        /*if(ans2.equals("c"))phno
-            total+=2;
-        if(ans3.equals("c"))
-            total+=2;
-        if(ans4.equals("b"))
-            total+=2;
-        if(ans5.equals("b"))
-            total+=2;
-        if(ans6.equals("c"))
-            total+=2;
-        if(ans7.equals("a"))
-            total+=2;
-        if(ans8.equals("a"))
-            total+=2;
-        if(ans9.equals("b"))
-            total+=2;
-        if(ans10.equals("c"))
-            total+=2;
-        if(ans11.equals("b"))
-            total+=2;
-        if(ans12.equals("c"))
-            total+=2;
-        if(ans13.equals("a"))
-            total+=2;
-        if(ans14.equals("b"))
-            total+=2;
-        if(ans15.equals("c"))
-            total+=2;
-        if(ans16.equals("d"))
-            total+=2;
-        if(ans17.equals("a"))
-            total+=2;
-        if(ans18.equals("d"))
-            total+=2;
-        if(ans19.equals("a"))
-            total+=2;
-        if(ans20.equals("a"))
-            total+=2;
-        if(ans21.equals("d"))
-            total+=2;
-        if(ans22.equals("d"))
-            total+=2;
-        if(ans23.equals("c"))
-            total+=2;
-        if(ans24.equals("b"))
-            total+=2;
-        if(ans25.equals("b"))
-            total+=2;*/
+           ans[i] = request.getParameter("group1");
+           corr[i] = request.getParameter("answ1");
+           if(ans[i].equals(corr[i]))
+                total += 2;
+        }
         try 
         {
             stmt = connect.createStatement();
