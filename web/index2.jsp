@@ -27,7 +27,7 @@
     url="jdbc:mysql://localhost:3306/jafer"
     user="root" password="lfaber"/>
     <sql:query dataSource="${snapshot}" var="result">
-        SELECT * from question;
+        SELECT * from question order by RAND();
     </sql:query>
     <form action="servlet_tier1" method="post">
         <div id="form_block">
@@ -39,7 +39,7 @@
                <b>Phone Number:</b><input type="text" name="phone_no">
             </div>
          </div>
-         <span id="ms_timer"></span>
+         <span id="ms_timer" style="display: "></span>
          <script>
 		$(function(){
 					  $('#ms_timer').countdowntimer({
@@ -60,10 +60,9 @@
          <div id="box">
         <c:forEach var="row" items="${result.rows}">
         <br>
-        <c:out value="${row.q_no}"/>.
             <font size="4">
-            <pre><c:out value="${row.q_data}"/>
-            </pre>
+            <pre><b><c:out value="${row.q_data}"/>
+            </b></pre>
             </font><br>
             <input type="radio" name="group${row.q_no}" value="e" checked="checked" style="display: none">
             <input type="radio" name="answ${row.q_no}" value="${row.crct_optn}" checked="checked" style="display: none">
