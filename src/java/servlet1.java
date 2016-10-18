@@ -52,9 +52,10 @@ public class servlet1 extends HttpServlet {
        name = request.getParameter("name");
        for(i = 1; i <= 25; i++)
         {
-
-           ans[i] = request.getParameter("group1");
-           corr[i] = request.getParameter("answ1");
+            String a = "group"+i; 
+            String b = "answ"+i;
+           ans[i] = request.getParameter(a);
+           corr[i] = request.getParameter(b);
            if(ans[i].equals(corr[i]))
                 total += 2;
         }

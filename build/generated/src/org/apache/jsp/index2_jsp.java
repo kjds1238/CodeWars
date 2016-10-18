@@ -109,7 +109,7 @@ public final class index2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("               <b>Phone Number:</b><input type=\"text\" name=\"phone_no\">\n");
       out.write("            </div>\n");
       out.write("         </div>\n");
-      out.write("         <span id=\"ms_timer\"></span>\n");
+      out.write("         <span id=\"ms_timer\" style=\"display: \"></span>\n");
       out.write("         <script>\n");
       out.write("\t\t$(function(){\n");
       out.write("\t\t\t\t\t  $('#ms_timer').countdowntimer({\n");
