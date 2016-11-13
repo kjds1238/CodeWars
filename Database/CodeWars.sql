@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `jafer` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `jafer`;
+CREATE DATABASE  IF NOT EXISTS `codewars` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `codewars`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
 -- Host: localhost    Database: jafer
